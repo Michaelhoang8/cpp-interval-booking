@@ -21,6 +21,6 @@ Times are signed 64-bit integers in one caller-defined unit. The example uses mi
 
 A sorted map per resource checks the adjacent reservations for conflicts in logarithmic time. A separate ID index supports cancellation. Rejected conflicts leave both indexes unchanged. Gap queries clip available intervals to the requested window; listing remains chronological.
 
-Tests cover touching endpoints, containment, spanning conflicts, duplicate IDs, cancellation/rebooking, independent resources, gap clipping and extreme signed endpoints. Native tests and the CLI fixture passed locally with Clang 14.0.6 on Windows. Ubuntu CI uses sanitizers.
+Tests cover touching endpoints, containment, spanning conflicts, duplicate IDs, cancellation/rebooking, independent resources, gap clipping and extreme signed endpoints. Native tests and the CLI fixture passed with Clang 14.0.6 on Windows and G++ 13.3.0 in an Ubuntu container. Fresh Linux builds also passed with AddressSanitizer and UndefinedBehaviorSanitizer. Ubuntu CI repeats those checks.
 
 The index is in memory and single-threaded. There is no timezone conversion, recurrence engine or database transaction layer.
