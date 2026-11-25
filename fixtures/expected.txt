@@ -1,0 +1,9 @@
+booked consult
+booked review
+conflict consult
+gap 510 540
+gap 630 660
+cancelled consult
+booked replacement
+replacement 540 600
+review 600 630
